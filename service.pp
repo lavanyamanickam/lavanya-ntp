@@ -1,0 +1,17 @@
+class ntp::service(
+	String $service_name = $ntp::service_name,
+	String $service_ensure = $ntp::service_ensure,
+	Boolean $service_enable = $ntp::service_enable,
+	Boolean $service_hasstatus = $ntp::service_hasstatus,
+	Boolean $service_harestart = $ntp::service_harestart,
+
+
+) {
+	service { 'ntp':
+	ensure => $service_ensure,
+	ensure => $service_enable,
+	name => $service_name,
+	hasstatus => $service_hasstatus,
+	hasrestart => $service_hasrestart,
+}
+}
